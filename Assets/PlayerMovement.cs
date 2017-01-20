@@ -10,13 +10,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask objectsLayer;
     [SerializeField]
-    private float playerSpeed;
+    private float movementTime;
 
     private BoxCollider2D PlayerCol;
 
     private bool canMove = true;
     private bool axisInUse = false;
     private bool holdTwoButtons = false;
+
 
     // Use this for initialization
     void Start()
@@ -38,14 +39,17 @@ public class PlayerMovement : MonoBehaviour
             print(hit.transform.gameObject.tag);
             if (hit.transform.gameObject.tag == Assets.Floor.Tag)
             {
-                canMove = false;
                 endPosition = transform.position + direction;
                 StartCoroutine(MoveCoroutine(endPosition));
             }
             else if (hit.transform.gameObject.tag == Assets.JumpPlatform.Tag)
             {
-                canMove = false;
                 endPosition = transform.position + direction * 2;
+                StartCoroutine(MoveCoroutine(endPosition));
+            }
+            else if (hit.transform.gameObject.tag == Assets.Water.Tag)
+            {
+                endPosition = transform.position + direction;
                 StartCoroutine(MoveCoroutine(endPosition));
             }
         }
@@ -53,16 +57,9 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator MoveCoroutine(Vector3 endPosition)
     {
-        float distance = (endPosition - transform.position).sqrMagnitude;
+        canMove = false;
 
-        while (distance > 0.0001f)
-        {
-            transform.position = Vector3.Lerp(transform.position, endPosition, playerSpeed);
-
-            distance = (endPosition - transform.position).sqrMagnitude;
-
-            yield return null;
-        }
+        yield return new WaitForSeconds(movementTime);
 
         transform.position = endPosition;
 
