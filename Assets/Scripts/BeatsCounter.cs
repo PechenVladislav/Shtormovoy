@@ -30,6 +30,8 @@ public class BeatsCounter : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         nextEventTime = AudioSettings.dspTime + startDelay;
+        audioSource.PlayScheduled(nextEventTime);
+
         running = true;
     }
     void Update()
@@ -38,7 +40,7 @@ public class BeatsCounter : MonoBehaviour
             return;
 
         double time = AudioSettings.dspTime;
-        if (time + musicGap > nextEventTime)
+        if (time > (nextEventTime + musicGap))
         {
             if (beats > points.Length - 1)
             {
@@ -69,14 +71,13 @@ public class BeatsCounter : MonoBehaviour
                 thirdBeat = false;
             }
 
-            audioSource.pitch = taktPoint == 1 ? 3 : 2;
-            audioSource.PlayScheduled(nextEventTime);
+            //audioSource.pitch = taktPoint == 1 ? 3 : 2;
             //Debug.Log("Scheduled source " + 0 + " to start at time " + nextEventTime);
             nextEventTime += 60.0F / bpm;
 
             if (((beats + 2) % 4) == 0)             //третий удар
             {
-                fourthBeatEventTime = nextEventTime;
+                fourthBeatEventTime = (nextEventTime + musicGap);
                 thirdBeat = true;
             }
 
