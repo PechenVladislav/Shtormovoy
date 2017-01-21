@@ -20,14 +20,6 @@ public class PlayerBehaviuor : MonoBehaviour {
         transform.position = startPlatform.position;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.tag == Assets.Water.Tag)
-        {
-            StartCoroutine("PlayerDeath");
-        }
-    }
-
     public IEnumerator PlayerDeath()
     {
         PlayerMovement.Instance.enabled = false;

@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveBehaviour : MonoBehaviour {
+public class WaveBehaviour : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    [SerializeField]
+    private int waveSpeed = 1;
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
 
     private void OnEnable()
     {
@@ -21,7 +26,15 @@ public class WaveBehaviour : MonoBehaviour {
 
     private void WaveUp()
     {
-        transform.position += Vector3.up;
+        transform.position += Vector3.up * waveSpeed;
         print("Wave Up!");
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            StartCoroutine(PlayerBehaviuor.Instance.PlayerDeath());
+        }
     }
 }
