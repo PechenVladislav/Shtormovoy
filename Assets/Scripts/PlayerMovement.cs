@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask objectsLayer;
     [SerializeField]
     private float movementTime;
+
+    private static Action<Vector2> animationEvent;
 
     private BoxCollider2D PlayerCol;
     private static PlayerMovement instance;
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(int x, int y)
     {
+        animationEvent.Invoke(new Vector2(x, y));
+
         Vector3 direction = new Vector3(x, y, 0f);
 
         RaycastHit2D hit = Physics2D.Linecast(transform.position + direction, transform.position + direction * 1.5f, objectsLayer);
@@ -119,5 +123,11 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance
     {
         get { return instance; }
+    }
+
+    public static Action<Vector2> AnimationEvent
+    {
+        get { return animationEvent; }
+        set { animationEvent = value; }
     }
 }

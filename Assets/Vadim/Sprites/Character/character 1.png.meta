@@ -1,57 +1,57 @@
 fileFormatVersion: 2
-guid: 9c4efbae9cb11014ea3bcf7cd18f7311
-timeCreated: 1484968775
+guid: 1091c4d0998cfa445b7165381158d51e
+timeCreated: 1485029072
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: character_0
-    21300002: character_1
-    21300004: character_2
-    21300006: character_3
-    21300008: character_4
-    21300010: character_5
-    21300012: character_6
-    21300014: character_7
-    21300016: character_8
-    21300018: character_9
-    21300020: character_10
-    21300022: character_11
-    21300024: character_12
-    21300026: character_13
-    21300028: character_14
-    21300030: character_15
-    21300032: character_16
-    21300034: character_17
-    21300036: character_18
-    21300038: character_19
-    21300040: character_20
-    21300042: character_21
-    21300044: character_22
-    21300046: character_23
-    21300048: character_24
-    21300050: character_25
-    21300052: character_26
-    21300054: character_27
-    21300056: character_28
-    21300058: character_29
-    21300060: character_30
-    21300062: character_31
-    21300064: character_32
-    21300066: character_33
-    21300068: character_34
-    21300070: character_35
-    21300072: character_36
-    21300074: character_37
-    21300076: character_38
-    21300078: character_39
-    21300080: character_40
-    21300082: character_41
-    21300084: character_42
-    21300086: character_43
-    21300088: character_44
-    21300090: character_45
-    21300092: character_46
-    21300094: character_47
+    21300000: character 1_0
+    21300002: character 1_1
+    21300004: character 1_2
+    21300006: character 1_3
+    21300008: character 1_4
+    21300010: character 1_5
+    21300012: character 1_6
+    21300014: character 1_7
+    21300016: character 1_8
+    21300018: character 1_9
+    21300020: character 1_10
+    21300022: character 1_11
+    21300024: character 1_12
+    21300026: character 1_13
+    21300028: character 1_14
+    21300030: character 1_15
+    21300032: character 1_16
+    21300034: character 1_17
+    21300036: character 1_18
+    21300038: character 1_19
+    21300040: character 1_20
+    21300042: character 1_21
+    21300044: character 1_22
+    21300046: character 1_23
+    21300048: character 1_24
+    21300050: character 1_25
+    21300052: character 1_26
+    21300054: character 1_27
+    21300056: character 1_28
+    21300058: character 1_29
+    21300060: character 1_30
+    21300062: character 1_31
+    21300064: character 1_32
+    21300066: character 1_33
+    21300068: character 1_34
+    21300070: character 1_35
+    21300072: character 1_36
+    21300074: character 1_37
+    21300076: character 1_38
+    21300078: character 1_39
+    21300080: character 1_40
+    21300082: character 1_41
+    21300084: character 1_42
+    21300086: character 1_43
+    21300088: character 1_44
+    21300090: character 1_45
+    21300092: character 1_46
+    21300094: character 1_47
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -84,7 +84,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -114,11 +114,27 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_0
+      name: character 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +147,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_1
+      name: character 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -144,7 +160,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_2
+      name: character 1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -157,7 +173,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_3
+      name: character 1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -170,7 +186,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_4
+      name: character 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -183,7 +199,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_5
+      name: character 1_5
       rect:
         serializedVersion: 2
         x: 64
@@ -196,7 +212,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_6
+      name: character 1_6
       rect:
         serializedVersion: 2
         x: 128
@@ -209,7 +225,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_7
+      name: character 1_7
       rect:
         serializedVersion: 2
         x: 192
@@ -222,7 +238,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_8
+      name: character 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -235,7 +251,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_9
+      name: character 1_9
       rect:
         serializedVersion: 2
         x: 64
@@ -248,7 +264,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_10
+      name: character 1_10
       rect:
         serializedVersion: 2
         x: 128
@@ -261,7 +277,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_11
+      name: character 1_11
       rect:
         serializedVersion: 2
         x: 192
@@ -274,7 +290,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_12
+      name: character 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -287,7 +303,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_13
+      name: character 1_13
       rect:
         serializedVersion: 2
         x: 64
@@ -300,7 +316,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_14
+      name: character 1_14
       rect:
         serializedVersion: 2
         x: 128
@@ -313,7 +329,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_15
+      name: character 1_15
       rect:
         serializedVersion: 2
         x: 192
@@ -326,7 +342,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_16
+      name: character 1_16
       rect:
         serializedVersion: 2
         x: 0
@@ -339,7 +355,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_17
+      name: character 1_17
       rect:
         serializedVersion: 2
         x: 64
@@ -352,7 +368,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_18
+      name: character 1_18
       rect:
         serializedVersion: 2
         x: 128
@@ -365,7 +381,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_19
+      name: character 1_19
       rect:
         serializedVersion: 2
         x: 192
@@ -378,7 +394,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_20
+      name: character 1_20
       rect:
         serializedVersion: 2
         x: 0
@@ -391,7 +407,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_21
+      name: character 1_21
       rect:
         serializedVersion: 2
         x: 64
@@ -404,7 +420,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_22
+      name: character 1_22
       rect:
         serializedVersion: 2
         x: 128
@@ -417,7 +433,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_23
+      name: character 1_23
       rect:
         serializedVersion: 2
         x: 192
@@ -430,7 +446,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_24
+      name: character 1_24
       rect:
         serializedVersion: 2
         x: 0
@@ -443,7 +459,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_25
+      name: character 1_25
       rect:
         serializedVersion: 2
         x: 64
@@ -456,7 +472,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_26
+      name: character 1_26
       rect:
         serializedVersion: 2
         x: 128
@@ -469,7 +485,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_27
+      name: character 1_27
       rect:
         serializedVersion: 2
         x: 192
@@ -482,7 +498,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_28
+      name: character 1_28
       rect:
         serializedVersion: 2
         x: 0
@@ -495,7 +511,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_29
+      name: character 1_29
       rect:
         serializedVersion: 2
         x: 64
@@ -508,7 +524,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_30
+      name: character 1_30
       rect:
         serializedVersion: 2
         x: 128
@@ -521,7 +537,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_31
+      name: character 1_31
       rect:
         serializedVersion: 2
         x: 192
@@ -534,7 +550,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_32
+      name: character 1_32
       rect:
         serializedVersion: 2
         x: 0
@@ -547,7 +563,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_33
+      name: character 1_33
       rect:
         serializedVersion: 2
         x: 64
@@ -560,7 +576,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_34
+      name: character 1_34
       rect:
         serializedVersion: 2
         x: 128
@@ -573,7 +589,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_35
+      name: character 1_35
       rect:
         serializedVersion: 2
         x: 192
@@ -586,7 +602,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_36
+      name: character 1_36
       rect:
         serializedVersion: 2
         x: 0
@@ -599,7 +615,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_37
+      name: character 1_37
       rect:
         serializedVersion: 2
         x: 64
@@ -612,7 +628,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_38
+      name: character 1_38
       rect:
         serializedVersion: 2
         x: 128
@@ -625,7 +641,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_39
+      name: character 1_39
       rect:
         serializedVersion: 2
         x: 192
@@ -638,7 +654,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_40
+      name: character 1_40
       rect:
         serializedVersion: 2
         x: 0
@@ -651,7 +667,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_41
+      name: character 1_41
       rect:
         serializedVersion: 2
         x: 64
@@ -664,7 +680,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_42
+      name: character 1_42
       rect:
         serializedVersion: 2
         x: 128
@@ -677,7 +693,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_43
+      name: character 1_43
       rect:
         serializedVersion: 2
         x: 192
@@ -690,7 +706,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_44
+      name: character 1_44
       rect:
         serializedVersion: 2
         x: 0
@@ -703,7 +719,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_45
+      name: character 1_45
       rect:
         serializedVersion: 2
         x: 64
@@ -716,7 +732,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_46
+      name: character 1_46
       rect:
         serializedVersion: 2
         x: 128
@@ -729,7 +745,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: character_47
+      name: character 1_47
       rect:
         serializedVersion: 2
         x: 192
@@ -742,7 +758,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     outline: []
-  spritePackingTag: char
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

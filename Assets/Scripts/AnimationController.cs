@@ -11,13 +11,23 @@ public class AnimationController : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-	void SetAnim(Vector2 dir)
+    void OnEnable()
     {
-        if(dir.x == 1)
+        PlayerMovement.AnimationEvent += SetAnim;
+    }
+
+    void OnDisable()
+    {
+        PlayerMovement.AnimationEvent -= SetAnim;
+    }
+
+    void SetAnim(Vector2 dir)
+    {
+        if(dir.x == -1)
         {
             animator.SetTrigger("Left");
         }
-        else if (dir.x == -1)
+        else if (dir.x == 1)
         {
             animator.SetTrigger("Right");
         }
