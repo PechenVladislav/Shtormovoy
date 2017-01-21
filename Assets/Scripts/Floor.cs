@@ -9,5 +9,13 @@ namespace Assets
     class Floor : MonoBehaviour
     {
         public const string Tag = "Floor";
+
+        public ParticleSystem particles;
+
+        public void breakPlatform()
+        {
+            particles.Play();
+            Destroy(gameObject, 1f);
+        }
     }
 }

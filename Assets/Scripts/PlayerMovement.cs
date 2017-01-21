@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float movementTime;
 
-    private static Action<Vector2> animationEvent;
+    private static Action<Vector2, bool> animationEvent;        //<dir, isJumpFloor>
 
     private BoxCollider2D PlayerCol;
     private static PlayerMovement instance;
@@ -32,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(int x, int y)
     {
-        animationEvent.Invoke(new Vector2(x, y));
-
         Vector3 direction = new Vector3(x, y, 0f);
 
         RaycastHit2D hit = Physics2D.Linecast(transform.position + direction, transform.position + direction * 1.5f, objectsLayer);
@@ -43,22 +41,26 @@ public class PlayerMovement : MonoBehaviour
             //print(hit.transform.gameObject.tag);
             if (hit.transform.gameObject.tag == Assets.Floor.Tag)
             {
+                animationEvent.Invoke(new Vector2(x, y), false);
                 StartCoroutine(MoveCoroutine(direction, false));
             }
             else if (hit.transform.gameObject.tag == Assets.JumpPlatform.Tag)
             {
                 if(BeatsCounter.InTakt)
                 {
+                    animationEvent.Invoke(new Vector2(x, y), true);
                     StartCoroutine(MoveCoroutine(direction * 2, false));
                 }
                 else
                 {
+                    animationEvent.Invoke(new Vector2(x, y), true);
                     StartCoroutine(MoveCoroutine(direction, true));
                 }
 
             }
             else if (hit.transform.gameObject.tag == Assets.Water.Tag)
             {
+                animationEvent.Invoke(new Vector2(x, y), false);
                 StartCoroutine(MoveCoroutine(direction, true));
             }
         }
@@ -125,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         get { return instance; }
     }
 
-    public static Action<Vector2> AnimationEvent
+    public static Action<Vector2, bool> AnimationEvent
     {
         get { return animationEvent; }
         set { animationEvent = value; }
