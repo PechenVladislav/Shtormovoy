@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (hit.transform.gameObject.tag == Assets.Water.Tag)
             {
-                StartCoroutine(MoveCoroutine(direction, false));
+                StartCoroutine(MoveCoroutine(direction, true));
             }
         }
     }
