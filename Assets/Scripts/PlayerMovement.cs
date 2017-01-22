@@ -93,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (BeatsCounter.InBeat)
                 {
-                    cheapPlatformAction.Invoke();
+                    hit.transform.gameObject.GetComponent<CheapPlatform>().StartDestroy();
+                    //cheapPlatformAction.Invoke();
                     StartCoroutine(MoveCoroutine(direction, false));
                     audioSource.clip = moveClip;
                     audioSource.Play();

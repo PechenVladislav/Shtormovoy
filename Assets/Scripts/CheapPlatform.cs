@@ -23,7 +23,7 @@ public class CheapPlatform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void StartDestroy()
+    public void StartDestroy()
     {
         StartCoroutine(cheapPlatform());
     }
