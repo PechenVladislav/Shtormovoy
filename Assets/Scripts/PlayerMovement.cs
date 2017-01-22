@@ -109,8 +109,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (BeatsCounter.InBeat)
                 {
-                    cheapPlatformAction.Invoke();
                     StartCoroutine(MoveCoroutine(direction, false));
+                    StartCoroutine(PlayerBehaviuor.Instance.Finish());
                     audioSource.clip = moveClip;
                     audioSource.Play();
                 }
