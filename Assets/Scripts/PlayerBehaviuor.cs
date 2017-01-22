@@ -6,9 +6,14 @@ public class PlayerBehaviuor : MonoBehaviour {
 
     [SerializeField]
     Transform startPlatform;
+    [SerializeField]
+    ParticleSystem paricleDeath;
+    [SerializeField]
+    GameObject RestartPanel;
 
     private static PlayerBehaviuor instance;
-    
+
+    private Animator animator;    
 
     private void Awake()
     {
@@ -17,14 +22,19 @@ public class PlayerBehaviuor : MonoBehaviour {
 
     void Start ()
     {
+        animator = GetComponentInChildren<Animator>();
         transform.position = startPlatform.position;
     }
 
     public IEnumerator PlayerDeath()
     {
         PlayerMovement.Instance.enabled = false;
-        yield return new WaitForSeconds(0.3f);
-        GameController.Instance.ReloadLevel();
+        paricleDeath.Play();
+        animator.Play("PlayerFading");
+        yield return new WaitForSeconds(1.5f);
+        RestartPanel.SetActive(true);
+
+        //GameController.Instance.ReloadLevel();
     }
 
     public static PlayerBehaviuor Instance
