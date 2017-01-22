@@ -6,6 +6,9 @@ public class CameraMovement : MonoBehaviour {
 
     [SerializeField]
     private Transform target;
+    [SerializeField]
+    private float speed = 10f;
+
 
     private Vector3 cameraChase;
 
@@ -20,7 +23,7 @@ public class CameraMovement : MonoBehaviour {
 
         cameraChase = new Vector3(transform.position.x, target.position.y, transform.position.z);
 
-        transform.position = Vector3.Lerp(transform.position, cameraChase, 0.3f);
+        transform.position = Vector3.Lerp(transform.position, cameraChase, speed * Time.deltaTime);
 
 	}
 }

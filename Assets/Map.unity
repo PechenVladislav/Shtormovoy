@@ -1523,6 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1949863592}
+  speed: 10
 --- !u!95 &911669085
 Animator:
   serializedVersion: 3
@@ -2085,7 +2086,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4683399969809614, guid: feedc1d9483899f478b279c1fc677462, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: -6.05
       objectReference: {fileID: 0}
     - target: {fileID: 4683399969809614, guid: feedc1d9483899f478b279c1fc677462, type: 2}
       propertyPath: m_LocalPosition.y
