@@ -52,14 +52,12 @@ public class WaveBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        print(1);
         if (col.gameObject.tag == "Player")
         {
             StartCoroutine(PlayerBehaviuor.Instance.PlayerDeath());
         }
         if (col.gameObject.tag == "Floor")
         {
-            print(2);
             col.gameObject.GetComponent<Assets.Floor>().breakPlatform();
             col.gameObject.GetComponent<Animator>().Play("PlatformFading");
         }

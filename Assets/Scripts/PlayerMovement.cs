@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private AudioClip passClip;
 
     private static Action<Vector2, bool> animationEvent;        //<dir, isJumpFloor>
+    private static Action cheapPlatformAction;
 
     private BoxCollider2D PlayerCol;
     private static PlayerMovement instance;
@@ -88,6 +89,38 @@ public class PlayerMovement : MonoBehaviour
                 audioSource.clip = passClip;
                 audioSource.Play();
             }
+            else if (hit.transform.gameObject.tag == "CheapPlatform")
+            {
+                if (BeatsCounter.InBeat)
+                {
+                    cheapPlatformAction.Invoke();
+                    StartCoroutine(MoveCoroutine(direction, false));
+                    audioSource.clip = moveClip;
+                    audioSource.Play();
+                }
+                else
+                {
+                    hit.transform.gameObject.GetComponent<Assets.Floor>().missPlatform();
+                    audioSource.clip = passClip;
+                    audioSource.Play();
+                }
+            }
+            else if (hit.transform.gameObject.tag == "Finish")
+            {
+                if (BeatsCounter.InBeat)
+                {
+                    cheapPlatformAction.Invoke();
+                    StartCoroutine(MoveCoroutine(direction, false));
+                    audioSource.clip = moveClip;
+                    audioSource.Play();
+                }
+                else
+                {
+                    hit.transform.gameObject.GetComponent<Assets.Floor>().missPlatform();
+                    audioSource.clip = passClip;
+                    audioSource.Play();
+                }
+            }
         }
     }
 
@@ -156,5 +189,11 @@ public class PlayerMovement : MonoBehaviour
     {
         get { return animationEvent; }
         set { animationEvent = value; }
+    }
+
+    public static Action CheapPlatformAction
+    {
+        get { return cheapPlatformAction; }
+        set { cheapPlatformAction = value; }
     }
 }

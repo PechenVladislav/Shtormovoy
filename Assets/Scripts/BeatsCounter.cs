@@ -124,7 +124,7 @@ public class BeatsCounter : MonoBehaviour
             inBeat = false;
         }
 
-        print(inBeat);
+        //print(inBeat);
     }
 
     public static bool InTakt
