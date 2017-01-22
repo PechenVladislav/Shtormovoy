@@ -9,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask objectsLayer;
     [SerializeField]
     private float movementTime;
+    [SerializeField]
+    private AudioClip moveClip;
+    [SerializeField]
+    private AudioClip jumpClip;
+    [SerializeField]
+    private AudioClip passClip;
 
     private static Action<Vector2, bool> animationEvent;        //<dir, isJumpFloor>
 
@@ -17,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     private bool axisInUse = false;
     private bool holdTwoButtons = false;
+    private AudioSource audioSource;
 
 
     private void Awake()
@@ -27,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         PlayerCol = GetComponent<BoxCollider2D>();
     }
 
@@ -45,10 +53,14 @@ public class PlayerMovement : MonoBehaviour
                 {
                     animationEvent.Invoke(new Vector2(x, y), false);
                     StartCoroutine(MoveCoroutine(direction, false));
+                    audioSource.clip = moveClip;
+                    audioSource.Play();
                 }
                 else
                 {
                     hit.transform.gameObject.GetComponent<Assets.Floor>().missPlatform();
+                    audioSource.clip = passClip;
+                    audioSource.Play();
                 }
             }
             else if (hit.transform.gameObject.tag == Assets.JumpPlatform.Tag)
@@ -57,11 +69,15 @@ public class PlayerMovement : MonoBehaviour
                 {
                     animationEvent.Invoke(new Vector2(x, y), true);
                     StartCoroutine(MoveCoroutine(direction * 2, false));
+                    audioSource.clip = jumpClip;
+                    audioSource.Play();
                 }
                 else
                 {
                     animationEvent.Invoke(new Vector2(x, y), true);
                     StartCoroutine(MoveCoroutine(direction, true));
+                    audioSource.clip = passClip;
+                    audioSource.Play();
                 }
 
             }
@@ -69,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 animationEvent.Invoke(new Vector2(x, y), false);
                 StartCoroutine(MoveCoroutine(direction, true));
+                audioSource.clip = passClip;
+                audioSource.Play();
             }
         }
     }
