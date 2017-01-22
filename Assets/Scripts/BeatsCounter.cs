@@ -9,6 +9,15 @@ public class BeatsCounter : MonoBehaviour
     public double startDelay = 2.0f;
     public float musicGap = 0.1f;
 
+    [SerializeField, Range(0, 0.6f)]
+    private float bitRight;
+    [SerializeField, Range(0, 0.6f)]
+    private float bitLeft;
+    [SerializeField, Range(0, 0.6f)]
+    private float taktRight;
+    [SerializeField, Range(0, 0.6f)]
+    private float taktLeft;
+
     private static Action waveAction;
 
     public GameObject[] points;
@@ -64,7 +73,7 @@ public class BeatsCounter : MonoBehaviour
             if (((beats + 1) % 4) == 0)          //такт
             {
                 taktPoint = 1;
-                if(section == 3)
+                if (section == 3)
                 {
                     waveAction.Invoke();
                     section = 0;
@@ -83,7 +92,7 @@ public class BeatsCounter : MonoBehaviour
             //audioSource.pitch = taktPoint == 1 ? 3 : 2;
             //Debug.Log("Scheduled source " + 0 + " to start at time " + nextEventTime);
             nextEventTime += 60.0F / bpm;
-            
+
             if (((beats + 2) % 4) == 0)             //третий удар
             {
                 fourthBeatEventTime = (nextEventTime + musicGap);
@@ -97,7 +106,7 @@ public class BeatsCounter : MonoBehaviour
         }
 
 
-            if (thirdBeat && time > (fourthBeatEventTime - (60f / bpm) * 0.4f) && time < (fourthBeatEventTime + (60f / bpm) * 0.6f))    //можно прыгать
+        if (thirdBeat && time > (fourthBeatEventTime - (60f / bpm) * taktLeft) && time < (fourthBeatEventTime + (60f / bpm) * taktRight))    //можно прыгать
         {
             inTakt = true;
         }
@@ -106,7 +115,7 @@ public class BeatsCounter : MonoBehaviour
             inTakt = false;
         }
 
-        if (time > (nextSimpleBeatTime - (60f / bpm) * (0.3f + 0.5f)) && time < (nextSimpleBeatTime + (60f / bpm) * (0.3f - 0.5f)))
+        if (time > (nextSimpleBeatTime - (60f / bpm) * (bitLeft + 0.5f)) && time < (nextSimpleBeatTime + (60f / bpm) * (bitRight - 0.5f)))
         {
             inBeat = true;
         }
