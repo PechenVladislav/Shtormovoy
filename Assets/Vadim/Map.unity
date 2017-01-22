@@ -200,6 +200,16 @@ Prefab:
       propertyPath: musicGap
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 82193553842597822, guid: 71fe5e6ca7432e948b14775df56a7c56,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82193553842597822, guid: 71fe5e6ca7432e948b14775df56a7c56,
+        type: 2}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71fe5e6ca7432e948b14775df56a7c56, type: 2}
   m_IsPrefabParent: 0
@@ -795,7 +805,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -924,6 +934,11 @@ Prefab:
     - target: {fileID: 1668781976952614, guid: 73d772aa3cb550945be7cc9be22b39ae, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198567042188360636, guid: 73d772aa3cb550945be7cc9be22b39ae,
+        type: 2}
+      propertyPath: randomSeed
+      value: -2116820821
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73d772aa3cb550945be7cc9be22b39ae, type: 2}

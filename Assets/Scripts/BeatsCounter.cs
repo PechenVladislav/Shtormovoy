@@ -16,6 +16,7 @@ public class BeatsCounter : MonoBehaviour
     public GameObject[] pointObjects;
 
     private static bool inTakt = false;
+    private static bool inBeat = false;
     private double nextEventTime;
     private double fourthBeatEventTime;
     private AudioSource audioSource;
@@ -24,12 +25,14 @@ public class BeatsCounter : MonoBehaviour
     private int taktPoint = 0;
     private bool thirdBeat = false;
     private int section = 0;
+    private double nextSimpleBeatTime;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
         nextEventTime = AudioSettings.dspTime + startDelay;
+        nextSimpleBeatTime = nextEventTime;
         audioSource.PlayScheduled(nextEventTime);
 
         running = true;
@@ -40,6 +43,12 @@ public class BeatsCounter : MonoBehaviour
             return;
 
         double time = AudioSettings.dspTime;
+
+        if (time > nextSimpleBeatTime)
+        {
+            nextSimpleBeatTime = nextEventTime + musicGap + (60f / bpm) * 0.5f;
+        }
+
         if (time > (nextEventTime + musicGap))
         {
             if (beats > points.Length - 1)
@@ -74,7 +83,7 @@ public class BeatsCounter : MonoBehaviour
             //audioSource.pitch = taktPoint == 1 ? 3 : 2;
             //Debug.Log("Scheduled source " + 0 + " to start at time " + nextEventTime);
             nextEventTime += 60.0F / bpm;
-
+            
             if (((beats + 2) % 4) == 0)             //третий удар
             {
                 fourthBeatEventTime = (nextEventTime + musicGap);
@@ -87,7 +96,8 @@ public class BeatsCounter : MonoBehaviour
             beats++;
         }
 
-        if (thirdBeat && time > (fourthBeatEventTime - (60f / bpm) * 0.4f) && time < (fourthBeatEventTime + (60f / bpm) * 0.6f))
+
+            if (thirdBeat && time > (fourthBeatEventTime - (60f / bpm) * 0.4f) && time < (fourthBeatEventTime + (60f / bpm) * 0.6f))    //можно прыгать
         {
             inTakt = true;
         }
@@ -95,11 +105,27 @@ public class BeatsCounter : MonoBehaviour
         {
             inTakt = false;
         }
+
+        if (time > (nextSimpleBeatTime - (60f / bpm) * (0.3f + 0.5f)) && time < (nextSimpleBeatTime + (60f / bpm) * (0.3f - 0.5f)))
+        {
+            inBeat = true;
+        }
+        else
+        {
+            inBeat = false;
+        }
+
+        print(inBeat);
     }
 
     public static bool InTakt
     {
         get { return inTakt; }
+    }
+
+    public static bool InBeat
+    {
+        get { return inBeat; }
     }
 
     public static Action WaveAction

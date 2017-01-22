@@ -10,12 +10,19 @@ namespace Assets
     {
         public const string Tag = "Floor";
 
-        public ParticleSystem particles;
+        public ParticleSystem breakParticles;
+
+        public ParticleSystem missParticles;
 
         public void breakPlatform()
         {
-            particles.Play();
+            breakParticles.Play();
             Destroy(gameObject, 1f);
+        }
+
+        public void missPlatform()
+        {
+            missParticles.Play();
         }
     }
 }

@@ -41,8 +41,15 @@ public class PlayerMovement : MonoBehaviour
             //print(hit.transform.gameObject.tag);
             if (hit.transform.gameObject.tag == Assets.Floor.Tag)
             {
-                animationEvent.Invoke(new Vector2(x, y), false);
-                StartCoroutine(MoveCoroutine(direction, false));
+                if(BeatsCounter.InBeat)
+                {
+                    animationEvent.Invoke(new Vector2(x, y), false);
+                    StartCoroutine(MoveCoroutine(direction, false));
+                }
+                else
+                {
+                    hit.transform.gameObject.GetComponent<Assets.Floor>().missPlatform();
+                }
             }
             else if (hit.transform.gameObject.tag == Assets.JumpPlatform.Tag)
             {
