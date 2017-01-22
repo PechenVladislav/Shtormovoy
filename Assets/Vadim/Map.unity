@@ -189,7 +189,7 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 414f38c233e3aa6418fae5f7d08bc205, type: 3}
+      objectReference: {fileID: 8300000, guid: 2b13893fa64dcbe4c9179ac94e4d930c, type: 3}
     - target: {fileID: 114583257813341266, guid: 71fe5e6ca7432e948b14775df56a7c56,
         type: 2}
       propertyPath: startDelay
