@@ -31,7 +31,7 @@ public class PlayerBehaviuor : MonoBehaviour {
         PlayerMovement.Instance.enabled = false;
         paricleDeath.Play();
         animator.Play("PlayerFading");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.2f);
         RestartPanel.SetActive(true);
 
         //GameController.Instance.ReloadLevel();
