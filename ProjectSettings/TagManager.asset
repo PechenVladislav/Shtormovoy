@@ -8,6 +8,7 @@ TagManager:
   - JumpPlatform
   - Water
   - CheapPlatform
+  - Decor
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Game
+    uniqueID: 3219144913
+    locked: 0
+  - name: UI
+    uniqueID: 1568999603
     locked: 0

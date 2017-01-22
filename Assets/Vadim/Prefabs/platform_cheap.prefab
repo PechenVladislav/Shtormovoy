@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95304677832259494}
   - component: {fileID: 61280834868473648}
   - component: {fileID: 114635385715345276}
+  - component: {fileID: 114260169523953306}
   m_Layer: 8
   m_Name: platform_cheap
   m_TagString: CheapPlatform
@@ -289,7 +290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021005730400838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -0.5}
+  m_LocalPosition: {x: 1, y: 0, z: -13.011719}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4949793931132318}
@@ -430,6 +431,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114260169523953306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021005730400838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5fab2efcb4d7649b9eacb4ff8d6cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1
+  destrParticles: {fileID: 198132994378344320}
+  animParent: {fileID: 95304677832259494}
+  animSecond: {fileID: 95953846766426956}
 --- !u!114 &114635385715345276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21584,7 +21600,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021005730400838}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1
@@ -21607,7 +21623,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1075822383
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b791af7c39a1ea8468021f8ee903e682, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

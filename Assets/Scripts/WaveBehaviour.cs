@@ -30,7 +30,6 @@ public class WaveBehaviour : MonoBehaviour
     {
         //transform.position += Vector3.up * waveSpeed;
         StartCoroutine(WaveMove());
-        print("Wave Up!");
     }
 
     private IEnumerator WaveMove()
@@ -60,6 +59,15 @@ public class WaveBehaviour : MonoBehaviour
         {
             col.gameObject.GetComponent<Assets.Floor>().breakPlatform();
             col.gameObject.GetComponent<Animator>().Play("PlatformFading");
+        }
+        if (col.gameObject.tag == "CheapPlatform")
+        {
+            col.gameObject.GetComponent<Assets.Floor>().breakPlatform();
+            col.gameObject.GetComponent<Animator>().Play("PlatformFading");
+        }
+        if (col.gameObject.tag == "Decor")
+        {
+            Destroy(col.gameObject);
         }
     }
 }

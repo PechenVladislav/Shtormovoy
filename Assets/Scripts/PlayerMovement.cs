@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
-                    animationEvent.Invoke(new Vector2(x, y), true);
+                    animationEvent.Invoke(new Vector2(x, y), true);     //
                     StartCoroutine(MoveCoroutine(direction, true));
                     audioSource.clip = passClip;
                     audioSource.Play();
@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (BeatsCounter.InBeat)
                 {
+                    animationEvent.Invoke(new Vector2(x, y), false);
                     hit.transform.gameObject.GetComponent<CheapPlatform>().StartDestroy();
                     //cheapPlatformAction.Invoke();
                     StartCoroutine(MoveCoroutine(direction, false));
